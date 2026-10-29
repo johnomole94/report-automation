@@ -1,0 +1,93 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{hyperref}
+
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{Business Performance Analysis}
+\rhead{Automated \LaTeX{} Report}
+\cfoot{\thepage}
+
+\title{Business Performance Analysis\\[2pt]\large Monthly Revenue, Expenses and Operating Profit}
+\author{John Omole\\Mathematics and Statistics}
+\date{<<DATE>>}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+This report was generated automatically by a Python script from a CSV file.
+It calculates operating profit and profit margin for each month, summarises
+the year, draws a chart, and writes this \LaTeX{} document. The dataset is fictional.
+\end{abstract}
+
+\section{Methodology}
+For each month $t$, operating profit, profit margin and revenue growth are
+\begin{align}
+P_t &= R_t - E_t, \\
+M_t &= \frac{P_t}{R_t} \times 100\%, \\
+G &= \frac{R_{\text{last}} - R_{\text{first}}}{R_{\text{first}}} \times 100\%.
+\end{align}
+
+\section{Data}
+Table~\ref{tab:data} lists the monthly figures. All totals are computed by the
+script from the rows shown, so they always agree with the table.
+
+\begin{table}[h]
+\centering
+\caption{Monthly business performance}
+\label{tab:data}
+\begin{tabular}{lrrrr}
+\toprule
+Month & Revenue & Expenses & Profit & Margin \\
+\midrule
+<<TABLE_ROWS>>
+\midrule
+\textbf{Total} & \textbf{<<TOTAL_REVENUE>>} & \textbf{<<TOTAL_EXPENSES>>} & \textbf{<<TOTAL_PROFIT>>} & \textbf{<<OVERALL_MARGIN>>\%} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Key Performance Indicators}
+\begin{table}[h]
+\centering
+\caption{Annual performance indicators}
+\begin{tabular}{lr}
+\toprule
+Indicator & Value \\
+\midrule
+Total revenue & <<TOTAL_REVENUE>> \\
+Total expenses & <<TOTAL_EXPENSES>> \\
+Total operating profit & <<TOTAL_PROFIT>> \\
+Average monthly revenue & <<AVG_REVENUE>> \\
+Overall profit margin & <<OVERALL_MARGIN>>\% \\
+Revenue growth (<<FIRST_MONTH>> to <<LAST_MONTH>>) & <<GROWTH>>\% \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Results}
+Figure~\ref{fig:trend} shows the monthly movement of revenue, expenses and operating profit.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.9\textwidth]{chart.png}
+\caption{Monthly revenue, expenses and operating profit}
+\label{fig:trend}
+\end{figure}
+
+\section{Findings}
+The following points were generated automatically from the data.
+\begin{enumerate}
+<<FINDINGS>>
+\end{enumerate}
+
+\section{Limitations}
+The dataset is fictional and compact. It excludes taxes, depreciation,
+financing costs, inflation adjustment and product-level detail.
+
+\end{document}
