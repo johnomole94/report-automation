@@ -29,7 +29,7 @@ template/report_template.tex   LaTeX layout with <<PLACEHOLDERS>>
 output/                   generated chart, .tex and PDF
 ```
 
-## Why I built it
+## Why I built it (with Claude’s help)
 My earlier hand-typed report had totals that did not match its monthly rows. Automating the calculation removed that error and made the report repeatable.
 
 ## Next steps
